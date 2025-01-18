@@ -1,8 +1,8 @@
-
+import 'package:ecommerce/Features/Authentication/Presentation/screen/sign_in_page.dart';
 import 'package:ecommerce/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'home_page.dart';
+import 'core/theme/theme_manager.dart';
 
 
 void main() {
@@ -15,7 +15,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: Locale("en"),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeManager.lightTheme(context),
+      locale: Locale("an"),
                   localizationsDelegates: [
                 S.delegate,
                 GlobalMaterialLocalizations.delegate,
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
                 GlobalCupertinoLocalizations.delegate,
             ],
             supportedLocales: S.delegate.supportedLocales,
-      home:HomePage()
+      home:const SignInPage()
       );
   }
 }
